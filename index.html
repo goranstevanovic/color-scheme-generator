@@ -10,6 +10,87 @@
     <title>Color Scheme Generator</title>
   </head>
   <body>
-    <h1>Color Scheme Generator</h1>
+    <header class="header">
+      <h1 class="header__title">Color Scheme Generator</h1>
+      <form id="color-scheme-form" class="color-scheme-form">
+        <input
+          type="color"
+          name="seed-color"
+          id="seed-color"
+          class="color-scheme-form__input color-scheme-form__input--color"
+        />
+        <select
+          name="color-scheme"
+          id="color-scheme"
+          class="color-scheme-form__input color-scheme-form__input--scheme"
+        >
+          <option value="monochrome">Monochrome</option>
+          <option value="monochrome-dark">Monochrome Dark</option>
+          <option value="monochrome-ligh">Monochrome Light</option>
+          <option value="analogic">Analogic</option>
+          <option value="complement">Complement</option>
+          <option value="analogic-complement">Analogic Complement</option>
+          <option value="triad">Triad</option>
+          <option value="quad">Quad</option>
+        </select>
+        <input
+          type="number"
+          name="colors-qty"
+          id="colors-qty"
+          class="color-scheme-form__input color-scheme-form__input--qty"
+          value="5"
+          min="2"
+          max="9"
+        />
+        <button class="color-scheme-form__button">Get Color Scheme</button>
+      </form>
+
+      <main class="color-list">
+        <div class="color">
+          <div class="color-swatch"></div>
+          <div class="color-info">
+            <p class="color-code">#F55A5A</p>
+            <p class="color-code">rgb(245, 90, 90)</p>
+            <p class="color-code">hsl(0, 89%, 66%)</p>
+          </div>
+        </div>
+
+        <div class="color">
+          <div class="color-swatch"></div>
+          <div class="color-info">
+            <p class="color-code">#98E946</p>
+            <p class="color-code">rgb(152, 233, 70)</p>
+            <p class="color-code">hsl(90, 79%, 59%)</p>
+          </div>
+        </div>
+
+        <div class="color">
+          <div class="color-swatch"></div>
+          <div class="color-info">
+            <p class="color-code">#51EEEE</p>
+            <p class="color-code">rgb(81, 238, 238)</p>
+            <p class="color-code">hsl(180, 82%, 63%)</p>
+          </div>
+        </div>
+
+        <div class="color">
+          <div class="color-swatch"></div>
+          <div class="color-info">
+            <p class="color-code">#A85DF2</p>
+            <p class="color-code">rgb(168, 93, 242)</p>
+            <p class="color-code">hsl(270, 85%, 66%)</p>
+          </div>
+        </div>
+
+        <div class="color">
+          <div class="color-swatch"></div>
+          <div class="color-info">
+            <p class="color-code">#F66969</p>
+            <p class="color-code">rgb(246, 105, 105)</p>
+            <p class="color-code">hsl(0, 89%, 69%)</p>
+          </div>
+        </div>
+      </main>
+    </header>
   </body>
 </html>
