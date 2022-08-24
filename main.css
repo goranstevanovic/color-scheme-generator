@@ -1,0 +1,146 @@
+:root {
+  --dark: #5e6774;
+  --darker: #1f2937;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: var(--darker);
+  font-family: 'Noto Sans', sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  margin: auto;
+  max-width: 40em;
+  padding: 1em;
+}
+
+.header {
+  background-color: var(--darker);
+  color: #fff;
+}
+
+.header__title {
+  font-size: 1.5rem;
+  margin: 0 0 1em;
+  text-align: center;
+}
+
+.color-scheme-form {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    'seed-color color-scheme color-scheme color-scheme'
+    'color-qty button button button';
+}
+
+.color-scheme-form__input {
+  color: var(--darker);
+  height: 2.5em;
+  width: 100%;
+}
+
+.color-scheme-form__input--color {
+  grid-area: seed-color;
+}
+
+.color-scheme-form__input--scheme {
+  grid-area: color-scheme;
+  padding: 0 1em;
+}
+
+.color-scheme-form__input--qty {
+  grid-area: color-qty;
+  text-align: center;
+}
+
+.color-scheme-form__button {
+  background-color: var(--dark);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  grid-area: button;
+}
+
+.color-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.color-swatch {
+  min-height: 7em;
+}
+
+.color-swatch-1 {
+  background-color: #f55a5a;
+}
+
+.color-swatch-2 {
+  background-color: #98e946;
+}
+
+.color-swatch-3 {
+  background-color: #51eeee;
+}
+
+.color-swatch-4 {
+  background-color: #a85df2;
+}
+
+.color-swatch-5 {
+  background-color: #f66969;
+}
+
+.color-info {
+  display: flex;
+  font-size: 0.75rem;
+  gap: 2em;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+}
+
+.color-code {
+  margin: 0;
+}
+
+@media screen and (min-width: 40em) {
+  .color-scheme-form {
+    display: grid;
+    gap: 1em;
+    grid-template-areas: 'seed-color color-scheme color-scheme color-scheme color-qty button button button';
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .color-list {
+    flex-direction: row;
+    height: calc(100vh - 8em);
+  }
+
+  .color {
+    height: 100%;
+    width: 100%;
+  }
+
+  .color-swatch {
+    height: 85%;
+  }
+
+  .color-info {
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 0.5em;
+  }
+}
