@@ -13,6 +13,25 @@ async function getColorScheme(seedColor, colorScheme, colorQty) {
   return data;
 }
 
+function displayColorScheme(colors) {
+  const colorListEl = document.getElementById('color-list');
+
+  const colorsEl = colors.map((color) => {
+    return `
+      <div class="color">
+      <div class="color-swatch" style="background-color: ${color.hex.value};"></div>
+      <div class="color-info">
+        <p class="color-code">${color.hex.value}</p>
+        <p class="color-code">${color.rgb.value}</p>
+        <p class="color-code">${color.hsl.value}</p>
+      </div>
+    </div>
+    `;
+  });
+
+  colorListEl.innerHTML = colorsEl.join('');
+}
+
 async function handleGetColorScheme(e) {
   e.preventDefault();
 
@@ -25,7 +44,9 @@ async function handleGetColorScheme(e) {
     colorScheme,
     colorQty
   );
-  console.log(colorSchemeData);
+
+  const colors = [colorSchemeData.seed, ...colorSchemeData.colors];
+  displayColorScheme(colors);
 }
 
 getColorSchemeBtn.addEventListener('click', handleGetColorScheme);
