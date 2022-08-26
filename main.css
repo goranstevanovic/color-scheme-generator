@@ -116,6 +116,17 @@ body {
   margin: 0;
 }
 
+.toast-message {
+  background-color: var(--darker);
+  bottom: 1em;
+  color: #fff;
+  left: 50%;
+  padding: 0.5em 1em;
+  position: fixed;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
 @media screen and (min-width: 40em) {
   .color-scheme-form {
     display: grid;
